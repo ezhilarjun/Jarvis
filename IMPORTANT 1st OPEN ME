@@ -1,0 +1,5 @@
+guys, after download the files,
+please note that the ENV files (env and env example),
+remove the name before the dot,
+after remove the name it will look like(.env and .env.example),
+otherwise it will not work.

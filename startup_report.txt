@@ -1,0 +1,23 @@
+=== Jarvis start-up fixer ===
+
+1) Startup folder: C:\Users\lap\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
+   kept (not Jarvis): dynamic_island - Shortcut.lnk
+   kept (not Jarvis): Ollama.lnk
+   MOVED old Jarvis item: start_jarvis.vbs  ->  C:\jarvis\old_startup_backup\start_jarvis.vbs
+   INSTALLED: start_jarvis.vbs  (starts jarvis_hud_pro.py, 30 seconds after login)
+
+2) Task Scheduler tasks that mention Jarvis:
+   none
+
+3) Registry start-up entries that mention Jarvis:
+   none
+
+4) Jarvis programs running right now:
+   PID  23856  py.exe       jarvis_hud.py
+   PID  29140  python.exe   jarvis_hud.py
+   -> something other than jarvis_hud_pro.py is running: that is the HUD you did not want.
+   stopped.
+
+DONE. Restart the laptop (or sign out and in). Only start_jarvis.vbs will start Jarvis, with HUD Pro.
+Old items are safe in C:\jarvis\old_startup_backup. Do not put them back unless you want that HUD again.
+If the wrong HUD still appears, send me the file startup_report.txt.

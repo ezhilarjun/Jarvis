@@ -1,0 +1,65 @@
+JARVIS -- COMPLETE SETUP (do these in exact order, top to bottom)
+====================================================================
+
+FILES NEEDED (all in C:\jarvis):
+  jarvis.py
+  jarvis_desktop.py
+  jarvis_apps.py
+  jarvis_phone.py    (phone control via ADB)
+  jarvis_hud_pro.py  (glowing HUD -- run this one for everything; jarvis_hud.py = classic Iron Man HUD)
+  run_jarvis.bat     (double-click to start Jarvis with a visible window, to see errors)
+  test_copilot_key.py (checks what your Copilot key sends)
+  jarvis_devices.py  (announces headset / Bluetooth / USB / Wi-Fi / charger changes)
+  start_jarvis.vbs   (only if you want auto-start on boot)
+
+--------------------------------------------------------------------
+STEP 1 -- Ollama (free local AI, no API key, no cost)
+--------------------------------------------------------------------
+1. Download + install from https://ollama.com
+2. Open a terminal and run:
+     ollama pull llama3.2:3b
+   Wait for "success".
+
+--------------------------------------------------------------------
+STEP 2 -- Put the files in C:\jarvis
+--------------------------------------------------------------------
+Delete any OLD jarvis.py / jarvis_desktop.py / jarvis_apps.py in that
+folder first, then copy in the new ones from this chat.
+
+--------------------------------------------------------------------
+STEP 3 -- Install every library in ONE command
+--------------------------------------------------------------------
+Open a terminal in C:\jarvis (type cmd in the folder's address bar)
+and run:
+
+  py -3.12 -m pip install faster-whisper sounddevice numpy edge-tts pygame psutil requests pyautogui pyperclip pillow pygetwindow selenium keyboard noisereduce PySide6
+
+--------------------------------------------------------------------
+STEP 4 -- Run it
+--------------------------------------------------------------------
+  py -3.12 jarvis_hud_pro.py
+
+What happens automatically now:
+  - It listens to background noise for 2 seconds and sets the mic
+    sensitivity itself. NO manual tuning needed. Stay quiet during
+    "Calibrating mic..." message.
+  - It warms up the AI model.
+  - Then says "Systems online, sir."
+
+Say: "Jarvis, what time is it?"
+Speak clearly, wait for the wake word to register, then ask.
+
+--------------------------------------------------------------------
+STEP 5 (optional) -- Auto-start when laptop boots
+--------------------------------------------------------------------
+1. Open start_jarvis.vbs in Notepad, confirm this line:
+     WshShell.Run "cmd /c py -3.12 jarvis_apps.py > jarvis_log.txt 2>&1", 0, False
+2. Press Win+R, type: shell:startup, press Enter.
+3. Copy start_jarvis.vbs into that folder.
+4. Restart the laptop to test.
+
+--------------------------------------------------------------------
+IF SOMETHING FAILS
+--------------------------------------------------------------------
+Send ONE clear screenshot of the exact error in the terminal.
+Don't paraphrase the error -- the exact text matters.

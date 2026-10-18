@@ -1,0 +1,8 @@
+pygame 2.6.1 (SDL 2.28.4, Python 3.12.10)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+Loading speech model... (the first run downloads it, please wait)
+Speech model 'medium' running on GPU.
+Copilot key ready: hold it to talk, or tap once to start and tap again to stop.
+JARVIS: Systems online. At your service, sir. Hold the Copilot key while you speak, or tap it to start and stop.
+(online voice unavailable: TimeoutError -- using offline voice for the next 2 minutes)
+GPU transcribe failed (Library cublas64_12.dll is not found or cannot be loaded), switching to CPU for the rest of this session.

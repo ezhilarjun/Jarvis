@@ -1,0 +1,13 @@
+faster-whisper
+sounddevice
+numpy
+edge-tts
+pygame
+psutil
+requests
+python-dotenv
+pyautogui
+pyperclip
+pillow
+pygetwindow
+selenium
